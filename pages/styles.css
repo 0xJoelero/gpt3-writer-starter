@@ -279,7 +279,8 @@ textarea {
     max-width: 1200px;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 60%;
+    margin-bottom: 100px;
 }
 
 .output-header-container {
@@ -321,9 +322,9 @@ textarea {
 }
 
 .output-content p {
-    text-align: center;
+    text-align: justify;
     white-space: pre-line;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
 }
 
 @media (min-width: 810px) and (max-width: 1199px) {
