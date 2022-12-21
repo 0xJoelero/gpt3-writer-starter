@@ -1,0 +1,7 @@
+{
+  "title": "Generador de sermones",
+  "subtitle": "Escribe un titulo o un versiculo y el generador escribira ideas para un sermon",
+  "placeholder": "Escribe aqui tu titulo o versiculo...",
+  "generate": "Generar",
+  "output": "Resultado"
+}
