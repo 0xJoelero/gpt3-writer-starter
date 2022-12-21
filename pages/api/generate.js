@@ -6,18 +6,16 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = `Write a sermon idea, with introduction, problem and resolution, about the title or verse below. Don't lie, be honest about the bible and your thougts. If the prompt is in spanish, write in spanish.
+const basePromptPrefix = `Write a sermon about the title or verse below. Quote some verses of the bible. If the prompt is in spanish, write in spanish. Use a style of writing like a famous pastor.
 Title:
 `;
 const generateAction = async (req, res) => {
-  // Run first prompt
-  console.log(`API: ${basePromptPrefix}${req.body.userInput}`);
 
   const baseCompletion = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput}`,
-    temperature: 0.7,
-    max_tokens: 1000,
+    temperature: 0.6,
+    max_tokens: 3000,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();
