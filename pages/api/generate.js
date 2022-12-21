@@ -6,7 +6,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-const basePromptPrefix = `Write a twitter thread in the style of Vitalik Buterin with the title below. Please make sure the thread goes in-depth on the topic and shows that the writer did their research. 
+const basePromptPrefix = `Write a sermon idea, with introduction, problem and resolution, about the title or verse below. Don't lie, be honest about the bible and your thougts. If the prompt is in spanish, write in spanish.
 Title:
 `;
 const generateAction = async (req, res) => {
@@ -17,7 +17,7 @@ const generateAction = async (req, res) => {
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}${req.body.userInput}`,
     temperature: 0.7,
-    max_tokens: 250,
+    max_tokens: 1000,
   });
 
   const basePromptOutput = baseCompletion.data.choices.pop();
